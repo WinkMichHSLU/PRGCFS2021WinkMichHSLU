@@ -7,7 +7,7 @@ int main( )
 	int end = 200;
 	int zaehler = 0;
 
-	for( int i = start; i < end; i++)
+	for( int i = start; i <= end; i++)
 	{
 		// Teilbar durch 11
 		if(i%11 == 0)
