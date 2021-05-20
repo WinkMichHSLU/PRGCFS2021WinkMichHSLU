@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 #include "insertionsort.h"
 
@@ -27,7 +28,13 @@ void printArray(int array[], int n);
 // Main Function 
 int main() 
 { 
-	int array[] = { 122, 17, 93, 3, 56, -5, -378, 65, 37, 37 }; 
+	int sz;
+	printf("Enter the size of array: ");
+	scanf("%d", &sz);
+	
+	int array[sz],i;
+	for(i = 0; i < sz; i++)
+		array [i] = rand()%10000000;
 	int n = sizeof(array) / sizeof(array[0]);
 	
 	
@@ -66,10 +73,28 @@ int main()
 				break;
 				
 			case SELECTION:
+			
+				printf("Please enter a number for sortingdirection\n - For ascending: 1\n - For descending: 0\n");
+				scanf("%d", &ascending);
+				
+				printArray(array, n);
+				selectionSort(array, n);
+				printArray(array, n);
+				
+				option = SHOWOPTION;
 				
 				break;
 				
 			case QUICK:
+			
+				printf("Please enter a number for sortingdirection\n - For ascending: 1\n - For descending: 0\n");
+				scanf("%d", &ascending);
+				
+				printArray(array, n);
+				quickSort(array, 0, n-1);
+				printArray(array, n);
+				
+				option = SHOWOPTION;
 				
 				break;
 				
